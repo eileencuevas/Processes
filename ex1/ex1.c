@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
 
 int main(void)
 {
@@ -15,7 +16,7 @@ int main(void)
 
     printf("Starting var: %d\n", var_to_change);
 
-    int pid = fork();
+    pid_t pid = fork();
     // child process starts executing here
 
     if (pid == 0) // child variable satisfies this branch

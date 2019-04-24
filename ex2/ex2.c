@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/types.h>
 
 int main(void)
 {
@@ -18,7 +19,7 @@ int main(void)
     FILE *textfile = fopen("text.txt", "r+"); // opens the file for reading/writing
     printf("text.txt opened.\n");
 
-    int pid = fork(); // fork
+    pid_t pid = fork(); // fork
     // child processes starts here
 
     if (pid > 0)
