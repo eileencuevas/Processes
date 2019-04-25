@@ -5,11 +5,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <sys/wait.h>
 
 int main(void)
 {
     // Your code here
+    pid_t pid = fork();
+
+    if (pid == 0)
+    {
+        // child process
+        printf("hello\n");
+    }
+    else
+    {
+        // parent process
+        wait(NULL);
+        printf("goodbye\n");
+    }
 
     return 0;
 }
